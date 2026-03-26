@@ -12,6 +12,7 @@ import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.MediaEntityBuilder;
 
+import utils.EmailUtils;
 import utils.ExtentReportManager;
 import utils.Log;
 
@@ -28,6 +29,10 @@ public class BaseTest {
 	@AfterSuite
 	public void tearDownReport() {
 		extent.flush();
+		
+		String reportPath = ExtentReportManager.reportPath;
+		EmailUtils.sendTestReport(reportPath);
+		
 	}
 
 	@BeforeMethod
@@ -39,7 +44,6 @@ public class BaseTest {
 		Log.info("Navigating to URL...");
 		driver.get("https://admin-demo.nopcommerce.com/login");
 	}
-
 	@AfterMethod
 	public void tearDown(ITestResult result) {
 
