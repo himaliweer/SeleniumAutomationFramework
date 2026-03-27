@@ -72,7 +72,7 @@ public class LoginTest extends BaseTest {
 		System.out.println("Title of the page is: " + driver.getTitle());
 		Log.info("Verifying page title");
 		test.info("Verifying page title");
-		Assert.assertEquals(driver.getTitle(), "Just a moment...");
+		Assert.assertEquals(driver.getTitle(), "Just a moment...ABCD");
 
 		test.pass("Login Successful");
 	}
