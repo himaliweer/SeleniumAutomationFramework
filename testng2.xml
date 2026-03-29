@@ -1,0 +1,15 @@
+<suite name="Listener Suite">
+
+    <listeners>
+        <listener class-name="listeners.TestNGListeners"/>
+    </listeners>
+
+    <test name="Google Tests">
+        <classes>
+            <class name="tests.GoogleSearchTest"/>
+        </classes>
+    </test>
+
+</suite>
+
+
